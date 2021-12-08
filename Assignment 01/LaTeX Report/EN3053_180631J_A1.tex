@@ -12,116 +12,68 @@
 \usepackage[ framed, numbered]{matlab-prettifier}%framed,%
 \usepackage{listings}
 \usepackage{pythonhighlight}
-
+\usepackage{pdfpages}
 
 \begin{document}
 
 \input{content/title_page}
-\tableofcontents
 
-\begin{center}
-	\textbf{\textit{* PDF is clickable}}
-\end{center}
-
-
-
-\textit{Note:}\\
-
-\textit{All the executable codes, a simulink model and a voice sample are included in a separate folder named as \textbf{EN2053-Assignment 2-180574K-180631J.rar} which was submitted along with this report.}\\
-
-\textit{Before run the \textbf{VoiceTransmissionBaseband.slx} simulink simulation related to the part 5 of the Task 1 ,(included in a separate folder named as \textbf{Task1-RFPM} inside the above folder) change the directories related to the voice input and output. Voice sample named as \textbf{voice.wav} is also included in the same folder.}\\
-
-\textit{Additionally all the materials related to Task 1 can also be found at \url{https://github.com/bimalka98/RF-Propagation-Model}}
 
 
 
 \pagebreak
 %%-----------------------------------------------------------------------
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img0}
-\end{figure}
-
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img1}
-\end{figure}
-
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img2}
-\end{figure}
-
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img3}
-\end{figure}
-
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img5}
-\end{figure}
-
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img4}
-\end{figure}
+\includepdf[pages=-, width=\textwidth]{code/answers.pdf}
 
 
 
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img6}
-\end{figure}
-
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img7}
-\end{figure}
-
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img8}
-\end{figure}
-
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img9}
-\end{figure}
-
-\begin{figure}[!h]
-	\includegraphics[scale=0.22]{figures/img10}
-\end{figure}
-
-\section*{Q4}
-\subsection*{(a)}
+\section*{Question 4}
+\subsection*{(a) The sequence of signals (waveforms) corresponding to the binary sequence}
 
 Please note that when plotting the below figure following values were assumed for the parameters.\\
 
 \begin{tabular}{l l}
 	Bit interval ($T_b$) & 1 $s$ \\
-	Symbol interval via (T) &$2 \times T_b = $  2 $s$
+	Symbol interval  (T) &$2 \times T_b = $  2 $s$
 \end{tabular}
 
 \begin{figure}[!h]
-	\includegraphics[scale=0.4]{figures/fig4a}
+	\centering
+	\includegraphics[scale=0.35]{figures/fig4a}
 \end{figure}
+
+\lstinputlisting[basicstyle = \mlttfamily\scriptsize , style = Matlab-editor]{code/codea.m}
 
 \pagebreak
-\subsection*{(b)}
+\subsection*{(b) The Quaternary MSK phase trajectory}
 Please note that when plotting the below figure following values were assumed for the parameters.\\
 
 \begin{tabular}{l l}
 	Bit interval ($T_b$) & 1 $s$ \\
-	Symbol interval via (T) &$2 \times T_b = $  2 $s$
+	Symbol interval  (T) &$2 \times T_b = $  2 $s$
 \end{tabular}
 
 \begin{figure}[!h]
-	\includegraphics[scale=0.4]{figures/fig4b}
+	\centering
+	\includegraphics[scale=0.35]{figures/fig4b}
 \end{figure}
+
+\lstinputlisting[basicstyle = \mlttfamily\scriptsize , style = Matlab-editor]{code/codeb.m}
 
 \pagebreak
-\subsection*{(c)}
+\subsection*{(c) The Quaternary MSK waveform corresponding to the binary sequence}
 Please note that when plotting the below figure following values were assumed for the parameters.\\
 
 \begin{tabular}{l l}
 	Bit interval ($T_b$) & 1 $s$ \\
-	Symbol interval via (T) &$2 \times T_b = $  2 $s$
+	Symbol interval  (T) &$2 \times T_b = $  2 $s$
 \end{tabular}
 
 \begin{figure}[!h]
-	\includegraphics[scale=0.4]{figures/fig4c}
+	\centering
+	\includegraphics[scale=0.35]{figures/fig4c}
 \end{figure}
 
+\lstinputlisting[basicstyle = \mlttfamily\scriptsize , style = Matlab-editor]{code/codec.m}
 %---------------------------------------------------------------------------
 \end{document}
