@@ -1,0 +1,51 @@
+%  -----------------------------------------------------------------------------
+%  Author         : Bimalka Piyaruwan Thalagala
+%  GitHub         : https://github.com/bimalka98
+%  -----------------------------------------------------------------------------
+
+\documentclass[a4paper,11pt]{article}%,twocolumn
+\input{settings/packages}
+\input{settings/page}
+\input{settings/macros}
+\usepackage[ framed, numbered]{matlab-prettifier}%framed,%
+\usepackage{listings}
+\usepackage{pythonhighlight}
+\usepackage{pdfpages}
+
+\begin{document}
+
+\input{content/title_page}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\vfill
+
+
+\begin{center}
+	\textit{\textbf{Note:}}
+\textit{{\tt MATLAB R2018a} of the MathWorks Inc. is used for the implementation.}
+\end{center}
+\pagebreak
+
+%%-----------------------------------------------------------------------
+\section{Task 1}
+
+Please note that for the MATLAB implementation bit rate(bits/second) of the generator was assumed to be 10. As we consider BPSK for the Task 1 and 2, the symbol rate(symbols/second) is remain the same as the bit rate of the generator.
+
+\subsection{Generation of an Impulse Train Representing BPSK Symbols}
+Binary data of the generator $D \in \{0, 1\}$ is mapped in to an impulse train according to the following function where $A(Amplitude)$  of the impulse was taken as 1 in the MATLAB implementation.
+\[
+amplitude ~of~ the~ k^{th}~ impulse = \begin{cases}
+	+A & if~ D = 1\\
+	-A & if~ D = 0
+\end{cases}
+\]
+
+\subsection{Transmit Signal}
+\subsection{Sinc function as the Impulse response}
+\subsection{Eye Diagram}
+
+
+%---------------------------------------------------------------------------
+\end{document}
