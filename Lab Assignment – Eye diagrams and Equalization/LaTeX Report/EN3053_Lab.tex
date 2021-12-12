@@ -44,8 +44,43 @@ amplitude ~of~ the~ k^{th}~ impulse = \begin{cases}
 
 \subsection{Transmit Signal}
 \subsection{Sinc function as the Impulse response}
+
+Function {\tt sinc(t)} in MATLAB is defined as follows. 
+\[
+{\tt sinc(t)} = \begin{cases}
+	\frac{sin(\pi.t)}{\pi.t} & if~t \neq 0\\
+	1 & if~ t = 1
+\end{cases}
+\]
+
+In order to generate  a sinc pulse that aligns with our time scale the function argument should be given as mentioned below. Where $T_b$ is the separation between
+successive transmitted pulses.
+
+\[
+sinc~pulse = {\tt sinc(\frac{t}{T_b})}
+\]
+
+
 \subsection{Eye Diagram}
 
+\section{Task 2}
+Task 2 is a repetition of the Task 1, but in the presence of additive white Gaussian noise (AWGN). Variance of the noise $N_0/2$ was set such that the Power efficiency $\gamma = E_b/N_0 = 10 ~dB$. Where $E_b$ is the average bit energy and $N_0$ is the noise power spectral density.
 
+\[
+\begin{split}
+	\gamma~in~dB &= 10.\log_{10}(E_b/N_0)\\
+	\gamma/10 &= \log_{10}(E_b/N_0)\\
+	10^{\gamma/10} &= E_b/N_0\\
+	N_0 &= \frac{E_b}{10^{\gamma/10}}
+\end{split}
+\]
+
+\[\therefore ~\sigma_{noise}^2 = N_0/2 = \frac{E_b}{2 \times 10^{\gamma/10}}  \]
+Assuming the $P(D = 0) = P(D = 1) = 1/2$ as we consider sufficient large amount of bits in the initial bit stream,
+\[
+E_b = \frac{1}{2} \times \left[ (+A)^2 + (-A)^2 \right]
+ = \frac{1}{2} \times \left[ (+1)^2 + (-1)^2 \right]
+ = 1
+\]
 %---------------------------------------------------------------------------
 \end{document}
