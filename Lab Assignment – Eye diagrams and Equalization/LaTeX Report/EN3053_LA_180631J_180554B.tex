@@ -79,19 +79,19 @@ sinc~pulse = {\tt sinc(\frac{t}{T_b})}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/task14}
-	\caption{Transmit Signal by Convolving the Impulse train with the Sinc Pulse}
+	\caption{Transmit Signal obtained by Convolving the Impulse train with the Sinc Pulse}
 \end{figure}
 
 \subsection{Eye Diagram}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.4]{figures/task15}
+	\includegraphics[scale=0.38]{figures/task15}
 	\caption{Eye Diagram of the Transmit Signal obtained by Convolving the Impulse train with the Sinc Pulse}
 \end{figure}
 
 \subsection{Raised Cosine with with roll-off factor $\alpha = 0.5$ as the Impulse response}
-MATLAB's built-in {\tt sinc} and {\tt cosine} functions were used to define the Raised Cosine filters as follows. Where $T_b$ is the separation between successive transmitted pulses.
+MATLAB's built-in {\tt sinc} and {\tt cosine} functions were used to define the Raised Cosine filters as follows. Where $T_b$ is the separation between successive transmitted pulses. Observe that when the roll-off factor $\alpha$ is increased the oscillations of side lobes of the filter decays much faster than that of the sinc filter. This reduces the affect of side lobes on the adjacent symbols which eventually reduce the inter symbol interference.
 
 \[
 raised~cosine = sinc(t/T_b)\times \frac{cos(\pi.\alpha.t/T_b)}{ (1 - (2.\alpha.t/Tb)^2 )}
@@ -99,7 +99,7 @@ raised~cosine = sinc(t/T_b)\times \frac{cos(\pi.\alpha.t/T_b)}{ (1 - (2.\alpha.t
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.4]{figures/task16}
+	\includegraphics[scale=0.38]{figures/task16}
 	\caption{Raised Cosine with with roll-off factor $\alpha = 0.5$ as the Impulse response of the Pulse Shaping Filter}
 \end{figure}
 
@@ -123,6 +123,8 @@ raised~cosine = sinc(t/T_b)\times \frac{cos(\pi.\alpha.t/T_b)}{ (1 - (2.\alpha.t
 
 \subsection{Raised Cosine with with roll-off factor $\alpha = 1$ as the Impulse response}
 
+
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{figures/task19}
@@ -144,20 +146,22 @@ raised~cosine = sinc(t/T_b)\times \frac{cos(\pi.\alpha.t/T_b)}{ (1 - (2.\alpha.t
 	\includegraphics[scale=0.4]{figures/task111}
 	\caption{Eye Diagram of the Transmit Signal obtained by Convolving the Impulse train with the Raised Cosine with with roll-off factor $\alpha = 1$}
 \end{figure}
-\vfill
+
 \subsection{Robustness of the system with respect to noise, sampling time and synchronization errors}
 
-By interpreting the eye diagrams of the above three systems several conclusions can be made on the robustness of those systems.
+By interpreting the eye diagrams of the above three systems several conclusions can be made on the robustness of the systems.
 
 \begin{itemize}
 	\item \textbf{Optimum Sampling Instant at maximum eye opening}: In all the three systems analyzed above , the margin of noise at the optimum sampling instance remain the same under the AWGN free environment.
-	\item \textbf{Error-Free Sampling Region}: Width of the eye diagram increases when we move from { \tt sinc} filter to the {\tt raised cosine} filter. That width further increases when we increase the roll-off factor of the raised cosine filter. That is the raised cosine pulse shaping filter has the widest error-free sampling region which makes it more robust.
-	\item \textbf{Level-Crossings at the corners of the eye}: {\tt sinc} pulse shaping filter has the maximum level crossing regions at the two corners of the eyes. This implies the highest affect from the Inter Symbol Interference (ISI). Therefore the sinc filter has lower robustness when comparing with the other two systems when it comes to ISI. 
+	
+	\item \textbf{Error-Free Sampling Region}: Width of the eye diagram increases when we move from { \tt sinc} filter to the {\tt raised cosine} filter. That width further increases when we increase the roll-off factor of the raised cosine filter. That is, the raised cosine pulse shaping filter has the widest error-free sampling region which makes it more robust.
+	
+	\item \textbf{Level-Crossings at the corners of the eye}: {\tt sinc} pulse shaping filter has the maximum level crossing regions at the two corners of the eyes. This implies the highest affect from the Inter Symbol Interference (ISI). Therefore the sinc filter has the lowest robustness when comparing with the other two systems when it comes to ISI. While {\tt raised cosine} filter has the best immunity to ISI as the pulse decays faster preventing the ISI to a greater extent.
 	
 \end{itemize}
 
 
-
+\pagebreak
 \section{Task 2}
 Task 2 is a repetition of the Task 1, but in the presence of additive white Gaussian noise (AWGN). Variance of the noise $N_0/2$ was set such that the Power efficiency $\gamma = E_b/N_0 = 10 ~dB$. Where $E_b$ is the average bit energy and $N_0$ is the noise power spectral density.
 
@@ -171,12 +175,13 @@ Task 2 is a repetition of the Task 1, but in the presence of additive white Gaus
 \]
 
 \[\therefore ~\sigma_{noise}^2 = N_0/2 = \frac{E_b}{2 \times 10^{\gamma/10}}  \]
-Assuming the $P(D = 0) = P(D = 1) = 1/2$ as we consider sufficient large amount of bits in the initial bit stream,
+Assuming the $P(D = 0) = P(D = 1) = 1/2$ as we consider sufficient large amount of bits in the initial bit stream, average energy of a bit energy can be calculated as follows.
 \[
 E_b = \frac{1}{2} \times \left[ (+A)^2 + (-A)^2 \right]
  = \frac{1}{2} \times \left[ (+1)^2 + (-1)^2 \right]
  = 1
 \]
+
 \pagebreak
 \subsection{Affect of AWGN, when using the Sinc function as the Impulse response}
 
@@ -225,14 +230,14 @@ E_b = \frac{1}{2} \times \left[ (+A)^2 + (-A)^2 \right]
 
 \subsection{Robustness of the system with respect to noise, sampling time and synchronization errors}
 
-Addition of AWGN has diminished the performance of all the three systems.This is clearly visible in all the three eye diagrams as that noise addition has made the eye smaller than the noise-free situation. However, {\tt raised cosine} pulse shaping filter still performs far better than both the other two systems. That makes it ideal for working under AWGN environments.
+Addition of AWGN has diminished the performance of all the three systems in various amounts.This is clearly visible in all the three eye diagrams as that noise addition has made the eye smaller than the noise-free situation of the system. However, {\tt raised cosine} pulse shaping filter with higher roll-off factor still performs far better than both the other two systems. 
 
 \begin{itemize}
-	\item \textbf{Optimum Sampling Instant at maximum eye opening}: Systems has slight changes in the instance at maximum eye opening due to the added AWGN. 
-	It's not the same as previous AWGN free situation.
-	\item \textbf{Error-Free Sampling Region}: {\tt raised cosine} filter with  the higher roll-off factor still shows the widest error free sampling region. Whereas AWGN has reduced, that of {\tt sinc} filter in great amount. This makes the raised cosine filter more robust under the AWGN environment.
-	\item \textbf{Level-Crossings at the corners of the eye}: As mentioned in the task 1 comparison, {\tt raised cosine} filter with  the higher roll-off factor has the narrowest level-crossing regions out of all the discussed systems. This makes that filter to be more robust for ISI, under the addition of the AWGN.
+	\item \textbf{Optimum Sampling Instant at maximum eye opening}: Noise margins of the systems has been changed in various amounts at the instance of maximum eye opening due to the addition of AWGN. It's not the same for all the systems as previous AWGN free situation.
 	
+	\item \textbf{Error-Free Sampling Region}: {\tt raised cosine} filter with  the higher roll-off factor still shows the widest error free sampling region. Whereas added AWGN has reduced that of {\tt sinc} filter in great amount. This makes the raised cosine filter more robust under the AWGN environment.
+	
+	\item \textbf{Level-Crossings at the corners of the eye}: As mentioned in the task 1 comparison, {\tt raised cosine} filter with  the higher roll-off factor has the narrowest level-crossing regions out of all the discussed systems. This makes that filter to be more robust for ISI, even under the addition of the AWGN.	
 \end{itemize}
 
 \section{Task 3}
@@ -247,10 +252,10 @@ Addition of AWGN has diminished the performance of all the three systems.This is
 In the Zero force Equalizer multi-path channel noise also get amplified. So the bit error rate is high. Since there is no any amplification in the noise in AWGN channel BER is less than Zero force equalizer multi path channel.
 
 
-\begin{appendices}
-	\section{Matlab Code for the Implementation}
+%\begin{appendices}
+	\section{MATLAB Implementation of the Tasks}
 	\includepdf[pages=-, width=1.2\textwidth]{code/task.pdf}
-\end{appendices}
+%\end{appendices}
 
 %---------------------------------------------------------------------------
 \end{document}
