@@ -10,15 +10,18 @@
 \usepackage[ framed, numbered]{matlab-prettifier}%framed,%
 \usepackage{listings}
 \usepackage{pythonhighlight}
+\usepackage{float}
+\usepackage{epstopdf}
 \usepackage{pdfpages}
+\usepackage[toc,page]{appendix}
 
 \begin{document}
 
 \input{content/title_page}
 
 \tableofcontents
-\listoffigures
-\listoftables
+%\listoffigures
+%\listoftables
 \vfill
 
 
@@ -42,6 +45,12 @@ amplitude ~of~ the~ k^{th}~ impulse = \begin{cases}
 \end{cases}
 \]
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task11}
+	\caption{Impulse Train Representing BPSK Symbols}
+\end{figure}
+
 \subsection{Transmit Signal}
 \subsection{Sinc function as the Impulse response}
 
@@ -59,9 +68,79 @@ successive transmitted pulses.
 \[
 sinc~pulse = {\tt sinc(\frac{t}{T_b})}
 \]
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task12}
+	\caption{Sinc function as the Impulse response of the Pulse Shaping Filter}
+\end{figure}
 
+\subsection{Convolving the Impulse train with the Sinc Pulse}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task14}
+	\caption{Transmit Signal by Convolving the Impulse train with the Sinc Pulse}
+\end{figure}
 
 \subsection{Eye Diagram}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task15}
+	\caption{Eye Diagram of the Transmit Signal obtained by Convolving the Impulse train with the Sinc Pulse}
+\end{figure}
+
+\subsection{Raised Cosine with with roll-off factor $\alpha = 0.5$ as the Impulse response}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task16}
+	\caption{Raised Cosine with with roll-off factor $\alpha = 0.5$ as the Impulse response of the Pulse Shaping Filter}
+\end{figure}
+
+\subsection{Convolving the Impulse train with the Raised Cosine with with roll-off factor $\alpha = 0.5$}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task17}
+	\caption{Transmit Signal by Convolving the Impulse train with the Raised Cosine with with roll-off factor $\alpha = 0.5$}
+\end{figure}
+
+\subsection{Eye Diagram}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task18}
+	\caption{Eye Diagram of the Transmit Signal obtained by Convolving the Impulse train with the Raised Cosine with with roll-off factor $\alpha = 0.5$}
+\end{figure}
+
+
+
+\subsection{Raised Cosine with with roll-off factor $\alpha = 1$ as the Impulse response}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task19}
+	\caption{Raised Cosine with with roll-off factor $\alpha = 1$ as the Impulse response of the Pulse Shaping Filter}
+\end{figure}
+
+\subsection{Convolving the Impulse train with the Raised Cosine with with roll-off factor $\alpha = 1$}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task110}
+	\caption{Transmit Signal by Convolving the Impulse train with the Raised Cosine with with roll-off factor $\alpha = 1$}
+\end{figure}
+
+\subsection{Eye Diagram}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task111}
+	\caption{Eye Diagram of the Transmit Signal obtained by Convolving the Impulse train with the Raised Cosine with with roll-off factor $\alpha = 1$}
+\end{figure}
+
+
 
 \section{Task 2}
 Task 2 is a repetition of the Task 1, but in the presence of additive white Gaussian noise (AWGN). Variance of the noise $N_0/2$ was set such that the Power efficiency $\gamma = E_b/N_0 = 10 ~dB$. Where $E_b$ is the average bit energy and $N_0$ is the noise power spectral density.
@@ -82,5 +161,69 @@ E_b = \frac{1}{2} \times \left[ (+A)^2 + (-A)^2 \right]
  = \frac{1}{2} \times \left[ (+1)^2 + (-1)^2 \right]
  = 1
 \]
+\pagebreak
+\subsection{Affect of AWGN, when using the Sinc function as the Impulse response}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task21}
+	\caption{Transmit Signal}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task22}
+	\caption{Eye Diagram}
+\end{figure}
+
+\pagebreak
+\subsection{Affect of AWGN, when using the Raised Cosine with with roll-off factor $\alpha = 0.5$ as the Impulse response}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task23}
+	\caption{Transmit Signal}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task24}
+	\caption{Eye Diagram}
+\end{figure}
+
+
+\pagebreak
+\subsection{Affect of AWGN, when using the Raised Cosine with with roll-off factor $\alpha = 1$ as the Impulse response}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task25}
+	\caption{Transmit Signal}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task26}
+	\caption{Eye Diagram}
+\end{figure}
+
+
+\section{Task 3}
+\subsection{Question 1 - 10}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{figures/task31}
+	\caption{Bit error probability curve for BPSK in ISI with ZF equalizers}
+\end{figure}
+
+\subsection{Question 11}
+In the Zero force Equalizer multi-path channel noise also get amplified. So the bit error rate is high. Since there is no any amplification in the noise in AWGN channel BER is less than Zero force equalizer multi path channel.
+
+
+\begin{appendices}
+	\section{Matlab Code for the Implementation}
+	\includepdf[pages=-, width=1.2\textwidth]{code/task.pdf}
+\end{appendices}
+
 %---------------------------------------------------------------------------
 \end{document}
